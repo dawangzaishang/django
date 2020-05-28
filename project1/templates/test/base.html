@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机端base</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+</head>
+<body>
+    <h1>this is test</h1>
+    <div class="pay_style_con clearfix">
+			<input type="radio" name="pay_style" value="1" checked>
+			<label class="cash">货到付款</label>
+			<input type="radio" name="pay_style" value="2">
+			<label class="weixin">微信支付</label>
+			<input type="radio" name="pay_style" value="3">
+			<label class="zhifubao"></label>
+			<input type="radio" name="pay_style" value="4">
+			<label class="bank">银行卡支付</label>
+    </div>
+    <input type="submit" class="test">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+        $('.test').click(function () {
+            alert($('input[name="pay_style"]:checked').val())
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+	<table   border="0" cellpadding="10" >
+	<tr><td bgcolor="#1eafed" colspan=3 style="background-color:#1eafed;border:none;border-radius:10px;"><h1><font color=white>用户登录</h1></td></tr>
+	<tr><td colspan=3 height=10></td></tr>
+		<tr>
+			<td align="right"><font color="#7d7d7d"><strong>手&nbsp;&nbsp;&nbsp;机&nbsp;&nbsp;&nbsp;号</td>
+			<td colspan=2>
+			<input id="mobile" name="mobile" style="height:35px;width:300px;" placeholder="+86" type="text" size="25" class="inputBg" /><span style="color:#FF0000"> *</span>
+    	</td>
+        </tr>
+      <tr>
+			<td align="right"><font color="#7d7d7d"><strong>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</td>
+			<td>
+			<input type="password" id="in"  style="height:35px;width:270px;"  ></td><td>
+<input type="button" style="background:url(image/2.jpg);background-size:100%;height:20px ;width:20px ;border:none"  id="ico" οnclick="xs()" title="显示密码">
+    	</td>
+        </tr>
+		<tr>
+			<td align="right"><font color="#7d7d7d"><strong>手机验证码</td>
+			<td align="left"colspan=2 >
+				<input type="text"  name="mobile_code" style="height:35px;width:180px;" class="inputBg" size="25" />
+				<input  type="button" style="background-color:#f5f5f5;border:none;height:35px;width:120px;border-radius:2px;color:#929aab;font-size='20px'" class="obtain generate_code" value=" 获取验证码" οnclick="settime(this);" style="width: 120px"  onClick="get_mobile_code()">
+			</td>
+		</tr>
+		<tr><td colspan=3 height=10><input type="checkbox">我已阅读并同意《天天生鲜》</td></tr>
+		<tr>
+			<td  colspan=3>
+			<input type="submit" value=" 登&nbsp;&nbsp;陆 " style="background-color:#ffcd3c;border:none;height:50px;width:420px;border-radius:10px;color:#929aab;font-size:24px;color:white;" >
+
+			</td>
+		</tr>
+
+	</table>
+
+<script type="text/javascript">
+
+//倒计时
+var countdown=60;
+function settime(val) {
+    if (countdown == 0) {
+        val.removeAttribute("disabled");
+        val.value="获取验证码";
+        countdown = 60;
+        return false;
+    } else {
+        val.setAttribute("disabled", true);
+        val.value="重新发送(" + countdown + ")";
+        countdown--;
+    }
+    setTimeout(function() {
+        settime(val);
+    },1000);
+}
+function xs(){
+        //var a = document.getElementById("inp").value;
+        var aa=document.getElementById("ico").title;
+        //alert();
+        if(aa == "隐藏密码"){
+            document.getElementById("in").type="password";
+            document.getElementById("ico").title = "显示密码";
+			//document.getElementById("ico").value = "显示密码";
+            document.getElementById("ico").style="background:url(image/1.jpg);background-size:100%;height:20px ;width:20px;border:none ";
+        }else{
+            document.getElementById("ico").title = "隐藏密码";
+			//document.getElementById("ico").value = "隐藏密码";
+            document.getElementById("in").type="text";
+            document.getElementById("ico").style="background:url(image/2.jpg);background-size:100%;height:20px ;width:20px ;border:none";
+        }
+
+        }
+
+</script>
+<style>
+    .ico{
+        height:30px;
+        width:34px;
+        background:url(images/ico.jpg) ;
+
+        top:10px;
+        left:8.5%;
+        opacity:0.7;
+        }
+    #in{ display:block;
+        height:30px;
+        width:10%;}
+</style>
+</body>
+</html>
